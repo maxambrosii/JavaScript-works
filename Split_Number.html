@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Задание 5</title>
+</head>
+<body>
+	   <table>
+
+	   	<tr>
+			<td>
+				Enter a phone number: 
+				<br>
+				[in the form (555) 555-5555]
+			</td>
+			
+			<td>
+				<input type="text" id="x1">
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2" align="center">
+				<button type="button" name="resultButton" onclick="distanta2()">Split</button>
+			</td>
+		</tr>
+        
+        <tr>
+			<td>
+				Area code:
+			</td>
+			
+			<td>
+				<input type="text" id="x2">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Number:
+			</td>
+			
+			<td>
+				<input type="text" id="x3">
+			</td>
+		</tr>
+       
+        </table>
+
+        <script>
+
+		
+
+		function distanta2(){
+
+			let str = document.getElementById('x1').value;
+            
+            let k = +0;
+            let area = "";
+            let numer = "";
+            for(let i = 0; i < str.length; i++){
+               if(str[i] == '(') {
+               	k++;
+                i++;
+               }
+
+ 			   if(str[i] == ')') {
+ 			   	k--;
+                i++;
+               }
+
+ 			   if(k == 1) area += str[i];
+ 			   if(k == 0) numer += str[i]; 
+
+            }
+			
+			document.getElementById("x2").value = area;
+			document.getElementById("x3").value = numer;
+
+		}
+
+		
+        
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>2</title>
+</head>
+<body>
+
+	<ol>
+  <li class="list-group-item">0</li>
+  <li class="list-group-item">0</li>
+  <li class="list-group-item">0</li>
+  <li class="list-group-item">0</li>
+  <li class="list-group-item">0</li>
+  <li class="list-group-item">0</li>
+  <li class="list-group-item">0</li>
+  <li class="list-group-item">0</li>
+</ol>
+
+
+
+<script>
+		
+		var buts = document.querySelectorAll('.list-group-item');
+
+buts.forEach(but => {
+  but.onclick = () => { 
+  	but.textContent = +but.textContent+1;
+  };
+});
+
+	
+</script>
+
+</body>
+</html>

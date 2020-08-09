@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+ 
+let year = parseInt(prompt('Введите год рождения:'));
+let month = parseInt(prompt('Введите месяц рождения:'));
+let day = parseInt(prompt('Введите день рождения:')); 
+ 
+let today = new Date();
+
+today.setHours(0,0,0,0);
+
+let myDate = new Date([today.getFullYear(),month,day].join(','));
+
+if (myDate < today) 
+	myDate.setFullYear(today.getFullYear()+1);
+    
+	mesDay = 24*60*60*1000; 
+
+	daysLeft = Math.round((myDate.getTime() - today.getTime())/mesDay);
+
+	ds = ""+daysLeft;
+ 
+	dayname = " Дней";
+ 
+if(daysLeft == 0) {
+	alert("С днем рождения!");
+} 
+else {
+	if(daysLeft==1) {
+	alert("Завтра будете бухать");
+} 
+else {
+	alert("До вашего ДР осталось "+daysLeft+dayname+"!");
+} 
+
+  } 
+
+	</script>
+</body>
+</html>

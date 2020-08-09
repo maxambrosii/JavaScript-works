@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>2</title>
+</head>
+<body>
+
+<p class="list-group-item">First text</p>
+<p class="list-group-item">Second text</p>
+<p class="list-group-item">Third text</p>
+
+
+<script>
+		
+		var buts = document.querySelectorAll('.list-group-item');
+
+buts.forEach(but => {
+  but.onclick = () => { 
+    text = prompt("Введите новый текст: ");
+  	but.textContent = text;
+  };
+});
+
+	
+</script>
+
+</body>
+</html>

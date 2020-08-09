@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+
+	<script>
+
+       let function1 = +prompt("Выберите задание 1-7:");
+
+		switch(function1) {
+  	case 1: { 
+  
+  	let x = 0;
+        while(x<=100){
+            x = prompt("Введите число больше 100: ");
+			if(!x) {
+				alert("Очень жаль что вы нас покидаете!");
+				break;
+			
+			}
+			if(x<=100) alert("Вы ввели число меньше 100, повторите ввод!\n");
+
+        }
+        alert("Спасибо:)");
+    
+    break;
+};
+  case 2:{
+ 	
+ 	 for(let i = 2; i <= 10; i++){
+ 	 	let k = 0;
+ 	 	for(let j = 1; j < 10; j++){
+           if(i % j == 0) k++;
+ 	 	}
+ 	 	if(k == 2) alert(i+"\n");
+ 	 }	
+
+  
+    break;
+};
+ 
+ case 3:{
+ 	alert("Введите 3 числа: ");
+ 	let x = +prompt("1 число: ");
+ 	let y = +prompt("2 число: ");
+ 	let z = +prompt("3 число: ");
+    
+    alert("Cумма = "+(x+y+z));
+    alert("Произведение = " + ( x * y * z));
+    alert("Cреднее значение = " + ((x+y+z)/3));
+    if(x >= y && x >= z){
+      alert("Максимальное число: " + x);
+    } else {
+    	if(y >= x && y >= z){
+    		alert("Максимальное число: " + y);
+    	}
+    	else{
+    		alert("Максимальное число: " + z);
+    	}
+    }
+
+    if(x <= y && x <= z){
+      alert("Минимальное число: " + x);
+    } else {
+    	if(y <= x && y <= z){
+    		alert("Минимальное число: " + y);
+    	}
+    	else{
+    		alert("Минимальное число: " + z);
+    	}
+    }
+ 	break;
+ };
+ case 4:{
+ 	let x = prompt("Введите первое число: ");
+ 	let y = prompt("Введите второе число: ");
+ 	if(y % x == 0) alert(x + " делитель "+y);
+ 	else alert(x + " не делитель "+y);
+ 	break;
+ };
+ case 5:{
+    
+    let res = "  number square cube \n";
+
+    for(let i = 0; i < 11 ; i++){
+      res += "       "+i;
+      res +="          " + i*i;
+      res +="          " + i*i*i;
+      res +="\n";
+    }
+    alert(res);
+
+ 	break;
+ };
+
+ case 6: {
+ 	let sum = +0;
+let func2 = +9;
+let prod1 = +0;
+let prod2 = +0;
+let prod3 = +0;
+let prod4 = +0;
+let prod5 = +0;
+ 	do{
+
+ 	 func2 = +prompt("Выберите продукт: \n 1 - Помидор: $2.98; \n 2 - Огурец: $4,50 \n 3 - Тапки: $9,98 \n 4 - Шнурок: $4,49 \n 5 - Посуда: $6,87 \n 0 - ВЫХОД из магазина\n");
+
+     switch(func2) {
+  		case 1: { 
+  			let kol = prompt("Сколько хотите купить: ");
+      		sum+=2.98;
+      		prod1+= kol;
+      		break;
+      	};
+      	case 2:{
+      		let kol = prompt("Сколько хотите купить: ");
+      		sum+=4.50;
+      		prod2+=kol;
+      		break;
+      	};
+      	case 3: { 
+      		let kol = prompt("Сколько хотите купить: ");
+      		sum+=9.98;
+      		prod3+=kol;
+      		break;
+      	};
+      	case 4:{
+      		let kol = prompt("Сколько хотите купить: ");
+      		sum+=4.49;
+      		prod4+=kol;
+      		break;
+      	};
+      	case 5: { 
+      		let kol = prompt("Сколько хотите купить: ");
+      		sum+=6.87;
+      		prod5+=kol;
+      		break;
+      	};
+      	}
+     }while(func2 != 0);
+     let rs = "Вы купили: \n";
+     if(prod1 != 0){
+     	rs += prod1 + " Помидор: " + (prod1 * 2.98).toFixed(2) + "$" + "\n";
+     }
+      if(prod2 != 0){
+     	rs += prod2 + " Огурец: " + (prod2 * 4.50).toFixed(2) + "$" + "\n";
+     }
+      if(prod3 != 0){
+     	rs += prod3 + " Тапки: " + (prod3 * 9.98).toFixed(2) + "$" + "\n";
+     }
+      if(prod4 != 0){
+     	rs += prod4 + " Шнурок: " + (prod4 * 4.49).toFixed(2) + "$" + "\n";
+     }
+      if(prod5 != 0){
+     	rs += prod5 + " Посуда: " + (prod5 * 6.87).toFixed(2) + "$" + "\n";
+     }
+   rs += "Общая сумма покупок: "+ sum.toFixed(2) + "$";
+  alert(rs);
+ 	
+	}
+	}
+
+	</script>
+	
+</body>
+</html>

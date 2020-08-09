@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+
+	<script>
+
+       let function1 = +prompt("Выберите задание 1-2:");
+
+		switch(function1) {
+  	case 1: { 
+  
+    var den =+ prompt('Введите день: ');
+    var mesyac =+ prompt('Введите месяц: ');
+    var god =+ prompt('Введите год: ');
+
+    switch (mesyac) {
+        case 1:
+            if (den <= 19)
+                znak = 'Козерог';
+            else
+                znak = 'Водолей';
+            break;
+        case 2:
+            if (den <= 18)
+                znak = 'Водолей';
+            else
+                znak = 'Рыбы';
+            break;
+        case 3:
+            if (den <= 20)
+                znak = 'Рыбы';
+            else
+                znak = 'Овен';
+            break;
+        case 4:
+            if (den <= 19)
+                znak = 'Овен';
+            else
+                znak = 'Телец';
+            break;
+        case 5:
+            if (den <= 20)
+                znak = 'Телец';
+            else
+                znak = 'Близнецы';
+            break;
+        case 6:
+            if (den <= 21)
+                znak = 'Близнецы';
+            else
+                znak = 'Рак';
+            break;
+        case 7:
+            if (den <= 22)
+                znak = 'Рак';
+            else
+                znak = 'Лев';
+            break;
+        case 8:
+            if (den <= 22)
+                znak = 'Лев';
+            else
+                znak = 'Дева';
+            break;
+        case 9:
+            if (den <= 22)
+                znak = 'Дева';
+            else
+                znak = 'Весы';
+            break;
+        case 10:
+            if (den <= 22)
+                znak = 'Весы';
+            else
+                znak = 'Скорпион';
+            break;
+        case 11:
+            if (den <= 22)
+                znak = 'Скорпион';
+            else
+                znak = 'Стрелец';
+            break;
+        case 12:
+            if (den <= 21)
+                znak = 'Стрелец';
+            else
+                znak = 'Козерог';
+            break;
+    }
+  alert('Знак зодиака: ' + znak);
+    if(god % 12 == 0){
+      alert('Знак восточного гороскопа: ОБЕЗЬЯНА');
+    } 
+    else
+      if(god % 12 == 1){
+      alert('Знак восточного гороскопа: ПЕТУХ');
+    }
+    else
+      if(god % 12 == 2){
+      alert('Знак восточного гороскопа: СОБАКА');
+    }
+else
+      if(god % 12 == 3){
+      alert('Знак восточного гороскопа: КАБАН');
+    }
+else
+      if(god % 12 == 4){
+      alert('Знак восточного гороскопа: КРЫСА');
+    }
+else
+      if(god % 12 == 5){
+      alert('Знак восточного гороскопа: БЫК');
+    }else
+      if(god % 12 == 6){
+      alert('Знак восточного гороскопа: ТИГР');
+    }
+else
+      if(god % 12 == 7){
+      alert('Знак восточного гороскопа: КРОЛИК');
+    }
+else
+      if(god % 12 == 8){
+      alert('Знак восточного гороскопа: Дракон');
+    }
+else
+      if(god % 12 == 9){
+      alert('Знак восточного гороскопа: ЗМЕЯ');
+    }
+    else
+      if(god % 12 == 10){
+      alert('Знак восточного гороскопа: ЛОШАДЬ');
+    }
+else
+      if(god % 12 == 11){
+      alert('Знак восточного гороскопа: КОЗА');
+    }
+
+
+
+    break;
+};
+ 
+ case 2:{
+    
+     var answer = parseInt(Math.random() * 100);
+    var playerNum = 1; //номер игрока, который сейчас ходит
+
+    while (true) {
+        var userAnswer = prompt('Ходит игрок ' + playerNum + '. Введите число от 0 до 100. Для выхода нажмите q');
+        if (userAnswer == 'q') {
+            break;
+        }
+        userAnswer = parseInt(userAnswer);
+
+        if (userAnswer > answer) {
+            alert('Ваш ответ слишком большой');
+        } else if (userAnswer < answer) {
+            alert('Ваш ответ слишком маленький');
+        } else if (userAnswer == answer) {
+            alert('Вы угадали! Выиграл игрок: ' + playerNum);
+            break;
+        } else {
+            alert('Необходимо ввести число!');
+        }
+
+        //делаем смену игрока
+        if (playerNum == 1) {
+            playerNum = 2;
+        } else {
+            playerNum = 1;
+        }
+    }
+
+ 	break;
+ };
+ case 6:{
+  window.alert("Hello");
+  break
+ };
+}
+
+function playGuess() {
+    var answer = parseInt(Math.random() * 100);
+
+    while (true) {
+        var userAnswer = prompt("Введите число от 0 до 100, для выхода нажмите q.");
+        if (userAnswer == "q") {
+            break;
+        }
+        userAnswer = parseInt(userAnswer);
+
+        if (userAnswer > answer) {
+            alert("Ваш ответ слишком большой.");
+        } else if (userAnswer < answer) {
+            alert("Ваш ответ слишком маленький.");
+        } else if (userAnswer == answer) {
+            alert("Вы угадали!");
+            break;
+        } else {
+            alert("Необходимо ввести число!");
+        }
+    }
+}
+	</script>
+	
+</body>
+</html>
