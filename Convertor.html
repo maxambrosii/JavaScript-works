@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Convertor</title>
+
+	<style type="text/css">
+		.divmain{
+			background:  url(bg.jpg);
+			padding: 10px;
+			width: 270px;
+		}
+	
+
+		img{
+			width: 50px;
+		}
+
+
+	</style>
+
+</head>
+<body>
+
+
+	<div class="divmain">
+		<div class="textconv"><center><h1>Конвертор</h1></center></div><br>
+		<select id="select_id">
+			<option>MDL</option>
+			<option>EUR</option>
+			<option>USD</option>
+		</select> <input type="text" value=""placeholder="Money" id="money" > <button onclick="convert_to()"> OK </button>
+		<br><br>	
+<table cellpadding="10">
+
+	<tr>
+	
+	<td><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/facebook/105/flag-for-moldova_1f1f2-1f1e9.png"></td>
+	<td>Leu </td>
+	<td>  <span id="span1">0</span>  MDL</td>
+
+	</tr>
+
+	<tr>
+	
+	<td><img src="https://im0-tub-ru.yandex.net/i?id=2341a627c2cec636d5e6c9318bcc3c2e&n=13&exp=1"></td>
+	<td>Euro</td>
+	<td><span id="span2">0</span>  EUR</td>
+
+	</tr>
+
+	<tr>
+	
+	<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Twemoji_1f1fa-1f1f8.svg/1200px-Twemoji_1f1fa-1f1f8.svg.png"></td>
+	<td>Dolar</td>
+	<td><span id="span3" vlaue="1">0</span>  USD</td>
+
+	</tr>
+
+
+
+</table>
+
+
+
+	</div>
+
+<script type="text/javascript">
+	
+	function convert_to(){
+	
+	var money = document.getElementById("money").value;
+	var select = document.getElementById("select_id").value;
+	var span1 = document.getElementById("span1");
+	var span2 = document.getElementById("span2");
+	var span3 = document.getElementById("span3");
+
+
+	if(select==="MDL"){
+
+	span1.innerHTML = parseFloat(Number(money)).toFixed(2);
+	span2.innerHTML = parseFloat(Number(money * 0.052)).toFixed(2);
+
+	span3.innerHTML = parseFloat(Number(money * 0.058)).toFixed(2);
+
+	}else if(select==="EUR"){
+	span1.innerHTML = parseFloat(Number(money*19.30)).toFixed(2);
+	span2.innerHTML = parseFloat(Number(money)).toFixed(2);
+	span3.innerHTML = parseFloat(Number(money * 0.9)).toFixed(2);
+	}else if(select==="USD"){
+	span1.innerHTML = parseFloat(Number(money*17.34)).toFixed(2);
+	span2.innerHTML = parseFloat(Number(money*1.11)).toFixed(2);
+	span3.innerHTML = parseFloat(Number(money)).toFixed(2);
+	}
+
+	}
+
+
+</script>
+
+
+
+</body>
+</html>

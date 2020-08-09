@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="Css_Pizza.css">
+</head>
+
+<body background="bg.jpg">
+
+	<p><h1 style="color: white;">Магазин пипперони</h1></p>
+
+	<div> <p style="color: white;">
+		<input class="radio" type="radio" name="r" onclick="livrare() ">Доставка</p>
+		<p style="color: white;">
+		<input class="radio" type="radio" name="r" onclick="livrare_x2()	" checked="true" style="color: white;" >На месте</p>
+	</div>
+
+	<br><br>
+
+	<div class="main">
+			<br>
+		<div style="display: inline-block; vertical-align: top; "><img src="http://gorodpiz.ru/wa-data/public/shop/products/01/00/1/images/106/106.970.jpg"></div>
+
+		<div class="infotxt" style="display: inline-block; vertical-align: top;"><p><h3>Пицца Пепперони</h3></p>Основа этой пикантной колбасы свинина, дополняемая пряностями. Это классический итальянский вариант данного продукта. В американской же вариации колбаска помимо свинины содержит еще говядину.</div>
+
+		<div  style="display: inline-block; vertical-align: top; margin-left:20px; "><p><h3>Cantitate</h3></p> <input onclick="Calc()" value="0" type="number" name="" id="count"> </div>
+
+		<div  style="display: inline-block; vertical-align: top; margin-left:20px; "><p><h3>Цена</h3></p> <label>75</label>MDL</div>
+
+
+		<div  style="display: inline-block; vertical-align: top; margin-left:20px; "><p><h3>Всего</h3></p> <label id="subtot">0</label>MDL</div>
+		<hr style="margin-right: 100%; width: 100%;" color="red" size="2" >
+
+		<div align="right"><table cellpadding="5">
+			<tr>
+				<td>Стоимость: </td>
+				<td><span id="sub">0 </span>MDL</td>
+			</tr>
+
+			<tr>
+				<td>Доставка: </td>
+				<td><span id="livrare">0 </span>MDL</td>
+			</tr>
+
+			<tr>
+				<td>Всего: </td>
+				<td><span id="tot">0 </span>MDL</td>
+			</tr>
+
+		</table>
+
+
+
+		<button onclick="calculate()">Посчитать: </button></div>
+	</div>
+
+
+
+	<script type="text/javascript">
+
+		function Calc(){
+
+
+			var count = document.getElementById("count").value;
+			document.getElementById('subtot').innerHTML = Number(count*75) + "  ";
+			document.getElementById('subtot').value = Number(count*75);
+			document.getElementById('sub').innerHTML = Number(count*75) + "  ";  
+			document.getElementById('sub').value = Number(count*75);  
+
+		}
+
+
+		function livrare(){
+
+			document.getElementById('livrare').innerHTML = 50 + "  "; 
+			document.getElementById('livrare').value = 50; 
+
+		}
+
+		
+		function livrare_x2(){
+
+			document.getElementById('livrare').innerHTML = 0 + "  "; 
+
+			document.getElementById('livrare').value = 0;
+		}
+
+		function calculate(){
+
+			var x1 = document.getElementById('sub').value;
+			var x2 = document.getElementById('livrare').value;
+			var total = x1+x2;
+
+			document.getElementById('tot').innerHTML = total + "  "; 
+
+
+		}
+
+
+
+
+
+	</script>
+
+</body>
+
+</html>

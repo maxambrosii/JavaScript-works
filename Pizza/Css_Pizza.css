@@ -1,0 +1,31 @@
+*{
+	
+}
+
+
+.infotxt{
+	color: white;
+	width: 300px;
+	display: inline-block;
+}
+.h1{
+	color: white;
+}
+.main{
+	width: 730px;
+	color: white;
+
+}
+
+input{
+	width: 50px;
+	margin-left: 3%;: 
+	color: white;
+}
+
+img{
+	padding: 4px;
+	width: 150px;
+	height: 150px;
+	color: white;
+}
