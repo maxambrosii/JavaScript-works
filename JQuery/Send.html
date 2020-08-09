@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<table border="1">
+<tr>
+<th>имя</th>
+<th>фамилия</th>
+</tr>
+
+</table>
+
+<input>
+<input>
+<input type="submit">
+
+<script>
+
+$('input:eq(2)').each(function (){
+$(this).click(function (){
+$('tr:eq(0)').clone().html('<td>' + $('input:eq(0)').val() + '</td><td>' + $('input:eq(1)').val() + '</td>').appendTo('table');
+})
+})
+
+$('table').on('click', 'td', function(){
+$(this).html(prompt('введите данные'));
+})
+
+</script>
+</body>
+</html>

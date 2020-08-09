@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<style>
+		img{
+			width: 256px;
+			height: 256px;
+			border-color: #E3FFFB;
+			border-width: 3px;
+
+		}
+	</style>
+</head>
+<body>
+	
+
+	<img src="1.png" id="first" onmouseout="Swape();" onmouseover="Swape();">
+	<img src="2.png" id="second" >
+
+<script>
+	function Swape(){
+		 var src = ($('#first').attr("src") === "1.png")
+                    ? "2.png" 
+                    : "1.png";
+      $('#first').attr("src", src);
+
+      var src = ($('#second').attr("src") === "1.png")
+                    ? "2.png" 
+                    : "1.png";
+      $('#second').attr("src", src);
+	}
+
+</script>
+
+
+</body>
+</html>

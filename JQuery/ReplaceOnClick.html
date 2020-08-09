@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>4</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+   <div id="pic2">
+	<img src="1.png" alt="" id="pic" style="position: absolute;">
+</div>
+
+
+<script>
+
+$('#pic').hover(
+function(){
+ $(this).css("filter", "blur(5px)");
+ var src = $('img').attr('src');
+
+ $('#pic2').append('<input type="button" value="ЖМИ!" style="position: absolute;">');
+
+},
+function(){
+  $(this).css("filter", "blur(0px)");
+});
+</script>
+</body>
+</html>

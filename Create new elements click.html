@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Задание 9 10 19 </title>
+</head>
+<body>
+
+	
+	<input type="text" name="" id="input">
+	<button onclick="add()"> + </button>
+
+	<script>
+	
+		//1
+
+		function add(){
+
+			let br = document.createElement('br');
+			document.body.append(br);
+
+			let input = document.createElement('input');
+			document.body.append(input);
+		}
+
+	</script>
+
+
+	<!--
+	<ol>
+		<li> 1 </li>
+		<li> 2 </li>
+		<li> 3 </li>
+		<li> 4 </li>
+	</ol>
+
+	<script>
+			
+		// 2
+
+		let lc = document.body.querySelector('ol > li:last-child');
+		
+		//alert('Last child: ' + lc);
+		
+		//document.body.querySelector('ol > li:last-child').remove();
+		// Тоже самое (удаляет)
+		lc.remove();
+
+	</script>
+	-->
+
+	<!--
+	<ol id="ol">
+		<li> 1 </li>
+		<li> 2 </li>
+		<li> 3 </li>
+		<li> 4 </li>
+	</ol>
+
+	<script>
+		
+		// 3
+
+		let liLast = document.createElement('li');
+	  	liLast.innerHTML = 'пункт';
+	  	ol.append(liLast); // вставить liLast в конец <ol>
+
+	</script>
+	-->
+
+	<!--
+	<ul id="ul">
+		<li> 1 </li>
+		<li> 2 </li>
+		<li> 3 </li>
+		<li> 4 </li>
+	</ul>
+
+	<script>
+		
+		let str = prompt('Введите элементы массива через пробел: ');
+		let elements = str.split(' ');
+
+		for(let elem of elements) {
+
+			let li = document.createElement('li');
+			li.innerHTML = elem;
+	  		ul.append(li);
+		}
+
+	</script>
+	-->
+
+	<!--
+	<script>
+		
+		let str = prompt('Введите элементы массива через пробел: ');
+		let elements = str.split(' ');
+		
+		let div = document.createElement('div');
+
+		document.body.append(div);
+
+		for(let e of elements) {
+
+			let p = document.createElement('p');
+			p.innerHTML = e;
+	  		div.append(p);
+		}
+
+	</script>
+	-->
+
+	<!--
+	<ol>
+		<li class="list-group-item" > 0 </li>
+		<li class="list-group-item" > 0 </li>
+		<li class="list-group-item" > 0 </li>
+		<li class="list-group-item" > 0 </li>
+	</ol>
+
+	<script>
+		
+		var buts = document.querySelectorAll('.list-group-item');
+
+		buts.forEach(but => {
+			but.onclick = () => {
+				but.textContent = +but.textContent+1;
+			}
+		});
+
+	</script>
+	-->
+	
+</body>
+</html>

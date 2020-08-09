@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Index</title>
+	<style type="text/css">
+		.field{
+			display: flex;
+			flex-direction: row;
+			width: 100vw;
+		}
+		img{
+			width: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="field">
+		<img src="1.jpg" style="width: 100px;"  alt="placeholder+image">
+		<img src="1.jpg" style="width: 100px;"  alt="placeholder+image">
+<img src="1.jpg" style="width: 100px;"  alt="placeholder+image">
+
+		
+	</div>
+	<button onclick="startAnime()">Start</button>
+
+	<script type="text/javascript">
+		let i = 1;
+
+		function startAnime(){
+			setInterval(changeImg, 50);
+		}
+		let interval = 7;
+		function changeImg(){
+			interval += 4;
+			for(let j = 0; j < 3; j++)
+			{
+				document.images[j].src = i +".jpg";
+				document.images[j].style.marginLeft = interval + "px";
+				i++;
+				if(i == 6){
+					i = 1;
+				}
+			}
+			
+		}
+	</script>
+</body>
+</html>

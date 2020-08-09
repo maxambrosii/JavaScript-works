@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+
+<p>1</p>
+<p>2</p>
+<p>3</p>
+
+<script>
+
+$('p').each(function (){
+
+	$(this).on('click', function onclk (){
+
+		$(this).text(Math.pow($(this).text(), 2));
+
+		$(this).off('click', onclk);
+		}); 
+}).each(function (){
+	$(this).on('dblclick', function dblclk (){
+	$(this).text($(this).text() * 2);
+	$(this).off('dblclick', dblclk);
+});
+});
+
+</script>
+
+</body>
+</html>

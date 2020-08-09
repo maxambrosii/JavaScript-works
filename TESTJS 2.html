@@ -1,0 +1,144 @@
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" language="JavaScript">
+
+var res = "32314";
+
+function check_me() {
+    var count = 0;
+    with(document.test) {
+        if (!Q1[0].checked && !Q1[1].checked && !Q1[2].checked && !Q1[3].checked && !Q1[4].checked) { count += 1 };
+        if (!Q2[0].checked && !Q2[1].checked && !Q2[2].checked && !Q2[3].checked && !Q2[4].checked) { count += 1 };
+        if (!Q3[0].checked && !Q3[1].checked && !Q3[2].checked && !Q3[3].checked && !Q3[4].checked) { count += 1 };
+        if (!Q4[0].checked && !Q4[1].checked && !Q4[2].checked && !Q4[3].checked && !Q4[4].checked) { count += 1 };
+        if (!Q5[0].checked && !Q5[1].checked && !Q5[2].checked && !Q5[3].checked && !Q5[4].checked) { count += 1 };
+        if (count > 0) alert("Вы выполнили не все задания. Проверьте!")
+        else answer();
+    }
+}
+
+function control(k, f1, f2, f3, f4, f5) {
+    if (k == 1 && f1.checked) return true;
+    if (k == 2 && f2.checked) return true;
+    if (k == 3 && f3.checked) return true;
+    if (k == 4 && f4.checked) return true;
+    if (k == 5 && f5.checked) return true;
+    return false;
+}
+
+function answer() {
+    answ = "";
+    with(document) {
+        answ += control(res.charAt(0), test.Q1[0], test.Q1[1], test.Q1[2], test.Q1[3], test.Q1[4]) ? "1" : "0";
+        answ += control(res.charAt(1), test.Q2[0], test.Q2[1], test.Q2[2], test.Q2[3], test.Q2[4]) ? "1" : "0";
+        answ += control(res.charAt(2), test.Q3[0], test.Q3[1], test.Q3[2], test.Q3[3], test.Q3[4]) ? "1" : "0";
+        answ += control(res.charAt(3), test.Q4[0], test.Q4[1], test.Q4[2], test.Q4[3], test.Q4[4]) ? "1" : "0";
+        answ += control(res.charAt(4), test.Q5[0], test.Q5[1], test.Q5[2], test.Q5[3], test.Q5[4]) ? "1" : "0";
+
+        showResult();
+    }
+}
+
+function showResult() {
+    var nok = 0;
+    var i, s;
+
+    for (i = 0; i < answ.length; i++) { nok += answ.charAt(i) == "1" ? 1 : 0; }
+    if (nok == 5) s = "Красавчик";
+    if (nok < 5) s = "Нормально";
+    if (nok < 3.75) s = "Пойдет";
+    if (nok < 2.5) s = "Не, ну ты чего? НЕПРАВИЛЬНО КЛАЦАЕШЬ";
+
+    document.test.s1.
+    value = "Процент правильных ответов " + (nok*100 / 5) + "%. " + s + ".";
+
+    with(document.test) {
+    	$('.v').css('background-color', 'green');
+
+        if (answ.charAt(0) == "1") { $('.v').css('background-color', 'green'); } else { 
+
+        	if(Q1[0].checked) $('#ne1').css('background-color', 'red');
+        	if(Q1[1].checked) $('#ne2').css('background-color', 'red');
+        	if(Q1[3].checked) $('#ne3').css('background-color', 'red');
+        	if(Q1[4].checked) $('#ne4').css('background-color', 'red');
+
+
+         };
+        if (answ.charAt(1) == "1") { T2.value = " + " } else { 
+
+        	if(Q2[0].checked) $('#ne12').css('background-color', 'red');
+        	if(Q2[2].checked) $('#ne22').css('background-color', 'red');
+        	if(Q2[3].checked) $('#ne32').css('background-color', 'red');
+        	if(Q2[4].checked) $('#ne42').css('background-color', 'red');
+        };
+        if (answ.charAt(2) == "1") { T3.value = " + " } else { 
+        	if(Q3[0].checked) $('#ne13').css('background-color', 'red');
+        	if(Q3[1].checked) $('#ne23').css('background-color', 'red');
+        	if(Q3[3].checked) $('#ne33').css('background-color', 'red');
+        	if(Q3[4].checked) $('#ne43').css('background-color', 'red');
+        };
+        if (answ.charAt(3) == "1") { T4.value = " + " } else { 
+        	if(Q4[1].checked) $('#ne14').css('background-color', 'red');
+        	if(Q4[2].checked) $('#ne24').css('background-color', 'red');
+        	if(Q4[3].checked) $('#ne34').css('background-color', 'red');
+        	if(Q4[4].checked) $('#ne44').css('background-color', 'red'); };
+        if (answ.charAt(4) == "1") { T5.value = " + " } else { 
+        	if(Q5[1].checked) $('#ne15').css('background-color', 'red');
+        	if(Q5[2].checked) $('#ne25').css('background-color', 'red');
+        	if(Q5[3].checked) $('#ne35').css('background-color', 'red');
+        	if(Q5[0].checked) $('#ne45').css('background-color', 'red');  
+        };
+    }
+}
+
+function showhide(obj) {
+    if (obj == 'none') return 'inline';
+    else return 'none';
+}
+// ]]>
+</script>
+<center><b>JavaScript ТЕСТ</b></center><br /><br />
+&nbsp;&nbsp;&nbsp;
+<form name="test">
+    <ol>
+        <li><b> Когда был создан JavaScript?</b><br />
+            <div id="ne1"><input type="radio" value="0" name="Q1" id="ne" /> 1994<br /></div>
+            <div id="ne2"><input type="radio" value="1" name="Q1" id="ne" /> 1999 <br /></div>
+            <div class="v"><input type="radio" value="2" name="Q1" /> 1995<br /></div>
+            <div id="ne3"><input type="radio" value="3" name="Q1" id="ne" /> 2001 <br /></div>
+            <div id="ne4"><input type="radio" value="4" name="Q1" id="ne" /> 2008<br /></div>
+            <br /></li>
+        <li><b> JavaScript и Java это одно и тоже.</b><br />
+            <div id="ne12"><input type="radio" value="0" name="Q2" /> Да<br /></div>
+            <div class="v"> <input type="radio" value="1" name="Q2" /> Нет<br /></div>
+            <div id="ne22"><input type="radio" value="2" name="Q2" /> Когда как<br /></div>
+            <div id="ne32"><input type="radio" value="3" name="Q2" /> Смотря как посмотреть<br /></div>
+            <div id="ne42"><input type="radio" value="4" name="Q2" /> Конечно же первый вариант правильный!<br /></div>
+            <br /></li>
+        <li><b> В каком разделе можно вставить JavaScript?</b><br />
+            <div id="ne13"><input type="radio" value="0" name="Q3" /> head<br /></div>
+            <div id="ne23"><input type="radio" value="1" name="Q3" /> body<br /></div>
+             <div class="v"><input type="radio" value="2" name="Q3" /> head и body<br /></div>
+            <div id="ne33"><input type="radio" value="3" name="Q3" /> нигде<br /></div>
+            <div id="ne43"><input type="radio" value="4" name="Q3" /> Только в отдельном файле script<br /></div>
+            <br /></li>
+        <li><b> Какой правильный способ использование IF оператора в JavaScript?</b><br />
+           <div class="v">  <input type="radio" value="0" name="Q4" /> if (i == 2)<br /> </div>
+           <div id="ne14"> <input type="radio" value="1" name="Q4" /> if i = 2 then<br /></div>
+           <div id="ne24"> <input type="radio" value="2" name="Q4" /> if i = 2<br /></div>
+           <div id="ne34"> <input type="radio" value="3" name="Q4" /> if i == 2 then<br /></div>
+           <div id="ne44"> <input type="radio" value="4" name="Q4" /> if (i = 2)<br /></div>
+            <br /></li>
+        <li><b> Какие из библиотек относятся к JavaScript</b><br />
+            <div id="ne15"><input type="radio" value="0" name="Q5" /> iostream,iomaip<br /></div>
+            <div id="ne25"><input type="radio" value="1" name="Q5" /> ttyleFramework<br /></div>
+            <div id="ne35"><input type="radio" value="2" name="Q5" /> Novella<br /></div>
+            <div class="v"> <input type="radio" value="3" name="Q5" /> JQuery, NodeJs<br /></div>
+            <div id="ne45"><input type="radio" value="4" name="Q5" /> Telegram<br /></div>
+            <br /></li>
+    </ol>
+    <CENTER>
+        <P><TEXTAREA name="s1" rows="4" cols="70" readonly> </TEXTAREA> </P>
+        <INPUT onclick="check_me()" type="button" value="Показать результат" />&nbsp;&nbsp;&nbsp;&nbsp;
+        <INPUT type="reset" value="Сбросить ответы" />
+    </CENTER>
+</form>

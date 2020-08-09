@@ -1,0 +1,76 @@
+$(this).html(cislo*2);<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+1
+<hr>
+<p id="showContent1">
+	Открывайте
+	<div id="content"></div>
+</p>
+
+<p id="showContent2">
+	Ну на крайняк это откройте
+	<div id="content1"></div>
+</p>
+
+ <img src="" alt="">
+<hr>
+<br><br>
+<b>2</b>
+<hr>
+
+
+<p class="Cislo">1</p>
+<p class="Cislo">2</p>
+<p class="Cislo">3</p>
+<p class="Cislo">4</p>
+<p class="Cislo">5</p>
+
+
+
+<script>
+$('#showContent1').on('click', {title:'Заголовок 1', content: 'Содержимое 1...'}, function(e){
+  var output = '<b>'+e.data.title+': </b>' + e.data.content;
+  $('#content').html(output);
+});
+
+$('#showContent2').on('click', {title:'Заголовок 2', content: 'Содержимое 2...'}, function(e){
+  var output = '<b>'+e.data.title+': </b>' + e.data.content;
+  $('#content1').html(output + "<img src='1.png'>");
+});
+
+$('.Cislo').on('click', function(){
+var logo = $(this);
+     var cislo = $('.Cislo').text();
+
+	$(this).html(cislo*cislo);
+
+	alert(cislo);
+    $(this).attr('class',null);
+   
+});
+
+
+$('.Cislo').on('dblclick', function(){
+  var cislo = $('.Cislo').text();
+   $(this).html(cislo*2);
+    $(this).attr('class',null);
+    
+	
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

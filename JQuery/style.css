@@ -1,0 +1,50 @@
+.wrapper {
+  padding: 20px 40px;
+  font-family: 'Arial';
+  font-size: 16px;
+}
+
+.wrapper .inputbox {
+  display: inline-block;
+  width: 200px;
+  border: 1px solid #000;
+  text-align: center;
+  padding: 5px 10px;
+}
+
+.wrapper .inputbox.good {
+  background: #b5ffa9;
+}
+
+.wrapper .inputbox.bad {
+  background: #FC2626;
+}
+
+.wrapper .btn {
+  display: block;
+  margin: 30px 0;
+  border: 0;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.wrapper .btn:hover {
+  background: #FC2626;
+}
+
+.result {
+  margin: 50px 0;
+  font-weight: bold;
+}
+
+.result.good {
+  color: #4ea140;
+}
+
+.result.bad {
+  color: #FC2626;
+}

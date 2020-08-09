@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>6</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+	<br><br>
+	<textarea id="txt"></textarea> <input type="button" id="btn" name="" value="Execute">
+	<script type="text/javascript">
+		$('#btn').click( function() {
+			eval($('textarea').val());	
+		});
+	</script>
+</body>
+</html>
